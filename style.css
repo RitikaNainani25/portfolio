@@ -114,7 +114,10 @@ section {
   box-shadow: var(--shadow);
 }
 
-/* Header & Navigation */
+/* ============================================
+   HEADER & NAVIGATION
+   ============================================ */
+
 header {
   position: fixed;
   top: 0;
@@ -250,7 +253,10 @@ header.scrolled {
   color: var(--primary);
 }
 
-/* Hero Section */
+/* ============================================
+   HERO SECTION
+   ============================================ */
+
 .hero {
   padding-top: 180px;
   min-height: 100vh;
@@ -293,7 +299,6 @@ header.scrolled {
   flex-wrap: wrap;
 }
 
-/* Hero Image - STATIC POSITION */
 .hero-image {
   position: absolute;
   right: 80px;
@@ -304,7 +309,6 @@ header.scrolled {
   border-radius: 20px;
   object-fit: cover;
   box-shadow: 0 20px 60px rgba(108, 99, 255, 0.3);
-  /* animation: float 3s ease-in-out infinite; */
 }
 
 .hero-decoration {
@@ -323,26 +327,79 @@ header.scrolled {
   z-index: 1;
 }
 
-@keyframes float {
-  0% {
-    transform: translateY(-50%);
-  }
-  50% {
-    transform: translateY(-55%);
-  }
-  100% {
-    transform: translateY(-50%);
-  }
+/* ============================================
+   ABOUT ME SECTION - FULL WIDTH (OUTSIDE CONTAINER)
+   ============================================ */
+
+.about-section {
+  padding: 0;
 }
 
-/* Photo Section */
-.photo-section {
-  padding: 80px 0;
+/* About Me Heading Wrapper - Full Width */
+.about-heading-wrapper {
   background-color: var(--dark-card);
-  border-radius: 20px;
-  margin: 40px 0;
+  padding: 60px 0 30px 0;
+  border-radius: 20px 20px 0 0;
+  margin: 40px 0 0 0;
+  width: 100%;
 }
 
+.about-heading-wrapper .container {
+  width: 90%;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+/* About Me Heading */
+.about-heading {
+  text-align: left;
+}
+
+.about-heading .section-title {
+  display: inline-block;
+  font-size: 2.5rem;
+  margin-bottom: 20px;
+  position: relative;
+  text-align: left;
+}
+
+.about-heading .section-title::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: -10px;
+  width: 60px;
+  height: 4px;
+  background: var(--gradient);
+  border-radius: 2px;
+}
+
+.about-heading .section-subtitle {
+  text-align: left;
+  font-size: 1.1rem;
+  color: var(--text-gray);
+  margin: 0;
+  max-width: 600px;
+}
+
+/* Photo Section - Full Width */
+.photo-section {
+  padding: 50px 0 80px 0;
+  background-color: var(--dark-card);
+  border-radius: 0 0 20px 20px;
+  margin: 0;
+  width: 100%;
+}
+
+.photo-section .container {
+  width: 90%;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+/* Photo Container */
 .photo-container {
   display: flex;
   align-items: center;
@@ -350,6 +407,7 @@ header.scrolled {
   gap: 60px;
 }
 
+/* Profile Photo */
 .profile-photo {
   flex: 1;
   display: flex;
@@ -393,6 +451,7 @@ header.scrolled {
   object-fit: cover;
 }
 
+/* Photo Content */
 .photo-content {
   flex: 1.5;
 }
@@ -400,15 +459,21 @@ header.scrolled {
 .photo-content h2 {
   font-size: 2.2rem;
   margin-bottom: 20px;
+  color: var(--text-light);
 }
 
 .photo-content p {
   font-size: 1.1rem;
   color: var(--text-gray);
-  margin-bottom: 30px;
+  margin-bottom: 20px;
   line-height: 1.8;
 }
 
+.photo-content p strong {
+  color: white;
+}
+
+/* Social Icons */
 .photo-social {
   display: flex;
   gap: 20px;
@@ -436,7 +501,10 @@ header.scrolled {
   transform: translateY(-5px);
 }
 
-/* Objective Section */
+/* ============================================
+   OBJECTIVE SECTION
+   ============================================ */
+
 .objective {
   background-color: var(--dark-card);
   border-radius: 20px;
@@ -477,7 +545,10 @@ header.scrolled {
   color: var(--text-gray);
 }
 
-/* Education Section */
+/* ============================================
+   EDUCATION SECTION
+   ============================================ */
+
 .education-container {
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
@@ -533,10 +604,13 @@ header.scrolled {
   margin-top: 15px;
 }
 
-/* Skills Section */
+/* ============================================
+   SKILLS SECTION - 6 BOXES
+   ============================================ */
+
 .skills-container {
   display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  grid-template-columns: repeat(3, 1fr);
   gap: 30px;
 }
 
@@ -580,7 +654,10 @@ header.scrolled {
   border: 1px solid rgba(108, 99, 255, 0.3);
 }
 
-/* Certifications Section */
+/* ============================================
+   CERTIFICATIONS SECTION
+   ============================================ */
+
 .certifications-container {
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
@@ -626,7 +703,10 @@ header.scrolled {
   font-size: 0.8rem;
 }
 
-/* Portfolio Section */
+/* ============================================
+   PORTFOLIO SECTION
+   ============================================ */
+
 .portfolio-grid {
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
@@ -688,7 +768,10 @@ header.scrolled {
   font-size: 0.8rem;
 }
 
-/* Achievements Section */
+/* ============================================
+   ACHIEVEMENTS SECTION
+   ============================================ */
+
 .achievement-card {
   background-color: var(--dark-card);
   border-radius: 15px;
@@ -729,7 +812,10 @@ header.scrolled {
   line-height: 1.6;
 }
 
-/* Contact Section */
+/* ============================================
+   CONTACT SECTION
+   ============================================ */
+
 .contact-container {
   display: grid;
   grid-template-columns: 1fr 1fr;
@@ -804,7 +890,10 @@ header.scrolled {
   border-color: var(--primary);
 }
 
-/* Next Steps Section */
+/* ============================================
+   NEXT STEPS SECTION
+   ============================================ */
+
 .next-steps {
   text-align: center;
   background-color: var(--dark-card);
@@ -831,7 +920,10 @@ header.scrolled {
   flex-wrap: wrap;
 }
 
-/* Footer */
+/* ============================================
+   FOOTER
+   ============================================ */
+
 footer {
   background-color: #080814;
   padding: 60px 0 30px;
@@ -898,7 +990,7 @@ footer {
    RESPONSIVE BREAKPOINTS
    ============================================ */
 
-/* Large Screens (1025px - 1200px) */
+/* ===== LARGE SCREENS (1025px - 1200px) ===== */
 @media (max-width: 1200px) {
   .hero-image {
     right: 40px;
@@ -907,8 +999,9 @@ footer {
   }
 }
 
-/* Medium Screens (769px - 1024px) */
+/* ===== MEDIUM SCREENS (769px - 1024px) ===== */
 @media (max-width: 992px) {
+  /* Hero */
   .hero h1 {
     font-size: 2.8rem;
   }
@@ -925,6 +1018,15 @@ footer {
     opacity: 0.4;
   }
 
+  /* About Me - Tablet */
+  .about-heading .section-title {
+    font-size: 2.2rem;
+  }
+
+  .about-heading .section-subtitle {
+    font-size: 1rem;
+  }
+
   .photo-container {
     flex-direction: column;
     text-align: center;
@@ -934,6 +1036,15 @@ footer {
     justify-content: center;
   }
 
+  .photo-content h2 {
+    font-size: 2rem;
+  }
+
+  .photo-content p {
+    font-size: 1rem;
+  }
+
+  /* Other Sections */
   .contact-container {
     grid-template-columns: 1fr;
   }
@@ -948,8 +1059,9 @@ footer {
   }
 }
 
-/* Small Screens (576px - 768px) - IMAGE HIDDEN */
+/* ===== SMALL SCREENS (576px - 768px) ===== */
 @media (max-width: 768px) {
+  /* Header */
   header {
     padding: 12px 0;
   }
@@ -1007,6 +1119,7 @@ footer {
     display: block;
   }
 
+  /* Hero */
   .hero {
     padding-top: 140px;
     min-height: auto;
@@ -1032,7 +1145,6 @@ footer {
     text-align: center;
   }
 
-  /* IMAGE HIDDEN ON TABLET */
   .hero-image {
     display: none !important;
   }
@@ -1041,6 +1153,7 @@ footer {
     display: none !important;
   }
 
+  /* Section Titles */
   .section-title {
     font-size: 2rem;
   }
@@ -1051,6 +1164,47 @@ footer {
     margin-bottom: 40px;
   }
 
+  /* About Me - Mobile */
+  .about-heading-wrapper {
+    padding: 40px 0 20px 0;
+  }
+
+  .about-heading .section-title {
+    font-size: 2rem;
+  }
+
+  .about-heading .section-subtitle {
+    font-size: 0.95rem;
+  }
+
+  .photo-section {
+    padding: 30px 0 50px 0;
+  }
+
+  .photo-frame {
+    width: 200px;
+    height: 200px;
+  }
+
+  .photo-content h2 {
+    font-size: 1.8rem;
+  }
+
+  .photo-content p {
+    font-size: 1rem;
+  }
+
+  .photo-social {
+    gap: 15px;
+  }
+
+  .social-link {
+    width: 45px;
+    height: 45px;
+    font-size: 1.1rem;
+  }
+
+  /* Other Sections */
   .education-container,
   .certifications-container {
     grid-template-columns: 1fr;
@@ -1075,24 +1229,6 @@ footer {
 
   .portfolio-img {
     height: 160px;
-  }
-
-  .photo-section {
-    padding: 50px 0;
-    margin: 20px 0;
-  }
-
-  .photo-frame {
-    width: 200px;
-    height: 200px;
-  }
-
-  .photo-content h2 {
-    font-size: 1.8rem;
-  }
-
-  .photo-content p {
-    font-size: 1rem;
   }
 
   .objective {
@@ -1138,6 +1274,7 @@ footer {
     text-align: center;
   }
 
+  /* Footer */
   footer {
     padding: 40px 0 25px;
   }
@@ -1164,12 +1301,13 @@ footer {
   }
 }
 
-/* Extra Small Screens (Below 576px) - IMAGE HIDDEN */
+/* ===== EXTRA SMALL SCREENS (Below 576px) ===== */
 @media (max-width: 576px) {
   section {
     padding: 60px 0;
   }
 
+  /* Header */
   .logo {
     font-size: 1.2rem;
   }
@@ -1179,6 +1317,7 @@ footer {
     height: 32px;
   }
 
+  /* Hero */
   .hero {
     padding-top: 120px;
     padding-bottom: 40px;
@@ -1204,6 +1343,23 @@ footer {
     font-size: 1.8rem;
   }
 
+  /* About Me - Small Mobile */
+  .about-heading-wrapper {
+    padding: 30px 0 15px 0;
+  }
+
+  .about-heading .section-title {
+    font-size: 1.8rem;
+  }
+
+  .about-heading .section-subtitle {
+    font-size: 0.85rem;
+  }
+
+  .photo-section {
+    padding: 20px 0 40px 0;
+  }
+
   .photo-frame {
     width: 160px;
     height: 160px;
@@ -1213,16 +1369,21 @@ footer {
     font-size: 1.5rem;
   }
 
+  .photo-content p {
+    font-size: 0.95rem;
+  }
+
   .photo-social {
     gap: 12px;
   }
 
   .social-link {
-    width: 42px;
-    height: 42px;
-    font-size: 1.1rem;
+    width: 40px;
+    height: 40px;
+    font-size: 1rem;
   }
 
+  /* Other Sections */
   .education-card h3 {
     font-size: 1.1rem;
   }
@@ -1304,7 +1465,7 @@ footer {
   }
 }
 
-/* Very Small Devices (320px - 400px) - IMAGE HIDDEN */
+/* ===== VERY SMALL DEVICES (320px - 400px) ===== */
 @media (max-width: 400px) {
   .hero h1 {
     font-size: 1.5rem;
@@ -1335,9 +1496,32 @@ footer {
     font-size: 0.85rem;
     padding: 10px;
   }
+
+  /* About Me - Very Small */
+  .about-heading .section-title {
+    font-size: 1.5rem;
+  }
+
+  .about-heading .section-subtitle {
+    font-size: 0.8rem;
+  }
+
+  .photo-content h2 {
+    font-size: 1.3rem;
+  }
+
+  .photo-content p {
+    font-size: 0.9rem;
+  }
+
+  .social-link {
+    width: 35px;
+    height: 35px;
+    font-size: 0.9rem;
+  }
 }
 
-/* Landscape Mode Fix for Mobile - IMAGE HIDDEN */
+/* ===== LANDSCAPE MODE FIX FOR MOBILE ===== */
 @media (max-height: 500px) and (orientation: landscape) {
   .hero {
     padding-top: 100px;
@@ -1375,9 +1559,31 @@ footer {
   section {
     padding: 40px 0;
   }
+
+  /* About Me - Landscape */
+  .about-heading-wrapper {
+    padding: 25px 0 15px 0;
+  }
+
+  .photo-section {
+    padding: 15px 0 30px 0;
+  }
+
+  .photo-frame {
+    width: 140px;
+    height: 140px;
+  }
+
+  .photo-content h2 {
+    font-size: 1.5rem;
+  }
+
+  .photo-content p {
+    font-size: 0.9rem;
+  }
 }
 
-/* Print Styles */
+/* ===== PRINT STYLES ===== */
 @media print {
   header {
     position: relative;
@@ -1401,5 +1607,19 @@ footer {
 
   .hero-decoration {
     display: none !important;
+  }
+
+  .about-heading-wrapper {
+    background: none !important;
+    padding: 20px 0 !important;
+  }
+
+  .photo-section {
+    background: none !important;
+    padding: 20px 0 !important;
+  }
+
+  .photo-frame {
+    border: 2px solid #333 !important;
   }
 }
