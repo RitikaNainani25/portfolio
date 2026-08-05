@@ -110,23 +110,48 @@ document.querySelectorAll('a[href^="#"]').forEach(function(anchor) {
 });
 
 // ============================================
-// FORM SUBMISSION
+// 🔴 UPDATED: WEB3FORMS FORM SUBMISSION
 // ============================================
 
 const contactForm = document.getElementById("contactForm");
+const submitBtn = document.getElementById("submitBtn");
 
 if (contactForm) {
     contactForm.addEventListener("submit", function(e) {
         e.preventDefault();
-
-        const name = document.getElementById("name").value;
-        const email = document.getElementById("email").value;
-
-        alert(
-            `Thank you, ${name}! Your message has been sent. I'll get back to you at ${email} soon.`
-        );
-
-        contactForm.reset();
+        
+        // Show loading state
+        const originalText = submitBtn.innerHTML;
+        submitBtn.innerHTML = '<i class="fas fa-spinner fa-spin"></i> Sending...';
+        submitBtn.disabled = true;
+        
+        // Get form data
+        const formData = new FormData(this);
+        
+        // Send to Web3Forms
+        fetch("https://api.web3forms.com/submit", {
+            method: "POST",
+            body: formData
+        })
+        .then(response => response.json())
+        .then(data => {
+            if (data.success) {
+                alert("✅ Thank you! Your message has been sent successfully. I'll get back to you soon!");
+                contactForm.reset();
+            } else {
+                alert("❌ Oops! Something went wrong. Please try again later.");
+                console.error("Web3Forms Error:", data);
+            }
+        })
+        .catch(error => {
+            console.error("Error:", error);
+            alert("❌ Oops! Something went wrong. Please try again later.");
+        })
+        .finally(() => {
+            // Reset button
+            submitBtn.innerHTML = originalText;
+            submitBtn.disabled = false;
+        });
     });
 }
 
@@ -196,13 +221,13 @@ PROJECTS
      validation for a smooth user experience
    • Technologies: HTML, CSS, JavaScript, REST API
 
-3. Product Reviews Analysis Chatbot
-   • Developed an NLP-based chatbot to classify product reviews into
-     Positive, Neutral, and Negative sentiments using machine learning
-     techniques
-   • Performed text preprocessing, tokenization, TF-IDF vectorization, and
-     sentiment prediction to automate customer feedback analysis
-   • Technologies: Python, NLP, Machine Learning, NLTK
+3. AI-Based Automatic Attendance System
+   • Developed a web-based attendance system using Python, Flask, OpenCV,
+     and MySQL that automates student attendance through face recognition
+   • Students can register, log in, and collect their face dataset via webcam
+   • Automated email notifications for attendance records and low attendance
+     alerts (below 50%) using SMTP (Gmail) integration
+   • Technologies: Python, Flask, OpenCV, MySQL, SMTP, HTML/CSS/JS
 
 ================================================================================
 ACHIEVEMENTS
@@ -349,3 +374,4 @@ console.log("📱 Mobile menu is ready to use!");
 // Check if elements exist
 console.log("Mobile Menu Button:", mobileMenuBtn ? "✅ Found" : "❌ Not Found");
 console.log("Nav Links:", navLinks ? "✅ Found" : "❌ Not Found");
+console.log("Contact Form:", contactForm ? "✅ Found" : "❌ Not Found");
